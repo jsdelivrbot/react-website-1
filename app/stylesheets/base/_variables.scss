@@ -1,0 +1,38 @@
+$font-base: 16 !default;
+
+/// Base path for assets (fonts, images...),
+/// should not include trailing slash
+/// @access public
+/// @type String
+$asset-base-path: '../images' !default;
+
+//Grid settings
+$number-of-columns: 12 !default;
+$offset-columns: $number-of-columns !default;
+$grid-break: 768px;
+
+//Responsive Breakpints
+$small: 768px;
+$medium: 1024px;
+$large: 1140px;
+$wide: 4096px;
+
+//Font family
+$font-family: "PT Sans", sans-serif;
+
+// Colors
+$light-grey: #e1e1e1 !default;
+$white : rgba(255,255,255,0.9);
+$dark-gray: #333 !default;
+$black : rgb(0,0,0) !default;
+$gray: #F1F1F1;
+$light-gray: #FAFAFA;
+$shadow-gray: #EDEDED;
+$primary-color: #33c3f0 !default;
+$secondary-color: lighten($dark-gray, 13.5%) !default;
+$border-color: #bbb !default;
+$link-color: #1eaedb !default;
+$font-color: #222 !default;
+$header-font-color: #484747 !default;
+$brand-color: #3C2559 !default;
+$perspective-link: #220c52 !default;

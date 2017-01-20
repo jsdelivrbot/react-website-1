@@ -1,10 +1,9 @@
-//
-// Import all Base partials - base partials are defined
-// as elements such as variables, layout, mixins, etc
-//
-
-* {
-	color: blue;
-	font-family: 'PT Sans', Arial, sans-serif;
-}
-
+@import './variables';
+@import './mixins';
+@import './functions';
+@import './reset';
+@import './grid';
+@import './utilities';
+@import './responsive';
+@import './lists';
+@import './base';
