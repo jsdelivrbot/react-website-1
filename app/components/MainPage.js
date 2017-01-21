@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import PageHeader from './PageHeader';
 import FloatingButton from './FloatingButton';
 import Perspective from './Perspective';
+import Categories from './Categories';
 
 import PageLoader from './PageLoader';
 import { If, Then } from 'react-if';
@@ -46,7 +47,7 @@ export default class MainPage extends Component {
     this.setState({
       show: true
     });
-  }
+  }//unMount
 
   _handleMenu(e) {
 
@@ -76,6 +77,7 @@ export default class MainPage extends Component {
           </If>
           <PageHeader/>
           <FloatingButton handleMenu={this._handleMenu.bind(this)} />
+          <Categories />
         </div>
 
         <Perspective />
