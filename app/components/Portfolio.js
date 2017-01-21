@@ -6,13 +6,16 @@ import Lab from './Lab';
 import info from '../config/info';
 import { If, Then, Else } from 'react-if';
 
+import Loading from 'react-loading-animation';
+
 export default class Portfolio extends Component {
   constructor(props){
     super(props);
     this.state = {
       items: this.props.items,
       filter: 'work',
-      filtered: this.props.items
+      filtered: this.props.items,
+      show: true
     }
 
     this._handleFilter = this._handleFilter.bind(this);
@@ -23,7 +26,7 @@ _handleFilter(tag){
   this.setState({
     filter: tag
   })
-}
+}//handleFilter
 
 _filterItems(query){
   let items = this.state.items;
@@ -33,7 +36,7 @@ _filterItems(query){
     items.forEach(function(item){
           if(item.tag.toLowerCase().indexOf(query) != -1)
           queryResult.push(item);
-      });
+      })
   }else{
     queryResult = items;
   }
@@ -42,7 +45,14 @@ _filterItems(query){
   this.setState({
     filtered: queryResult
   })
+}//filterItems
+
+componentDidMount(){
+  this.setState({
+    show: false
+  })
 }
+
 	render() {
     const filter = this.state.filter;
 		return (
@@ -56,6 +66,7 @@ _filterItems(query){
 
         <div className="container large-container">
           <div className="row">
+            <Loading isLoading={this.state.show}/>
             <If condition={filter == "work"}>
               <Then>
                 <Work items={this.state.filtered} />

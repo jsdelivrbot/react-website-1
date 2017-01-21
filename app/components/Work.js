@@ -22,7 +22,7 @@ export default class Work extends Component {
                 <div className="card">
                   <div className="card__inner">
                     <CardHeader image={"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample74.jpg"} tag={item.tag}/>
-                    <CardBody title={item.title} desc={item.desc} tag={item.tag} />
+                    <CardBody title={item.title} desc={item.desc} tag={item.tag} tags={item.tags}/>
                   </div>
                 </div>
               </div>

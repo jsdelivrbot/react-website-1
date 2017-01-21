@@ -4,7 +4,19 @@
       text-transform:uppercase;
       cursor: pointer;
       opacity: 0.35;
+      margin-right:10px;
+
       &.active{opacity:1;}
+
+      .filter__icon--svg{
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        vertical-align: middle;
+        path{
+          fill:inherit;
+        }
+      }
     }
   }
 
