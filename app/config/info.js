@@ -4,8 +4,8 @@ const info = {
   secondSentence: 'Take a look at my work or get in touch.',
   portfolioDescription: {
     title: 'Portfolio',
-    description: `Our everyday work is presented here, we do what we love,
-                  Case studies, video presentations and photo-shootings below.`
+    description: `My everyday work is presented here, I do what I love,
+                  Case studies,Portfolio items and experiments using variety of technology stacks.`
   }
 }
 

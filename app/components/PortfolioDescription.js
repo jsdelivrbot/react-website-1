@@ -38,11 +38,11 @@ export default class PortfolioDescription extends Component {
 		return (
       <div className="row">
           
-        <div className="col-6">
+        <div className="col-10">
           <div className="section__title">
             <ul className="filter">
               <li><h3 className={active == 'work' ? 'active' : ''} data-filter="work" onClick={this._handleFilter}>Work</h3></li>
-              <li><h3 className={active == 'work' ? 'active' : ''} data-filter="lab" onClick={this._handleFilter}>Lab</h3></li>
+              <li><h3 className={active == 'lab' ? 'active' : ''} data-filter="lab" onClick={this._handleFilter}>Lab</h3></li>
             </ul>
             <p>
               { desc? desc : 'Please select category on the right side of this page.' }
@@ -50,10 +50,12 @@ export default class PortfolioDescription extends Component {
           </div>
         </div>
 
-        <div className="col-6">
-          <div className="portfolio__filter">
-            <h3>Filter by technology used: </h3>
-            <input type="search" name="filter-input" placeholder="e.g. js,react,php,c#,wp" onChange={this._filterItems}/>
+        <div className="col-2">
+          <div className="portfolio__filter text-right">
+            <label for="filter-input" className="label-input">
+              <input type="search" name="filter-input" placeholder="e.g. js,react,php,c#,wp" onChange={this._filterItems}/>
+              <div>Search by technology: </div>
+            </label>
           </div>
         </div>
 
