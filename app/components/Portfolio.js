@@ -1,57 +1,72 @@
 import React, {Component} from 'react';
 import PortfolioDescription from './PortfolioDescription';
-import CardHeader from './CardHeader';
-import CardBody from './CardBody';
+import Work from './Work';
+import Lab from './Lab';
+
 import info from '../config/info';
+import { If, Then, Else } from 'react-if';
 
 export default class Portfolio extends Component {
   constructor(props){
     super(props);
     this.state = {
-      items: this.props.items
+      items: this.props.items,
+      filter: 'work',
+      filtered: this.props.items
     }
 
-    this.renderCard = this.renderCard.bind(this);
+    this._handleFilter = this._handleFilter.bind(this);
+    this._filterItems = this._filterItems.bind(this);
   }
 
-  componentDidMount(){
-    //setState when link choosen or something
-  }
+_handleFilter(tag){
+  this.setState({
+    filter: tag
+  })
+}
 
-  renderCard (key) {
-    return <Card key={key} index={key} card={this.state.items[key]} />
+_filterItems(query){
+  let items = this.state.items;
+  let queryResult = []
+
+  if(query.length > 0){
+    items.forEach(function(item){
+          if(item.tag.toLowerCase().indexOf(query) != -1)
+          queryResult.push(item);
+      });
+  }else{
+    queryResult = items;
   }
+  
+
+  this.setState({
+    filtered: queryResult
+  })
+}
 	render() {
+    const filter = this.state.filter;
 		return (
 			<section className="section">
         <div className="container large-container">
-          <PortfolioDescription title={info.portfolioDescription.title} description={info.portfolioDescription.description}/>
+          <PortfolioDescription title={info.portfolioDescription.title}
+                                 description={info.portfolioDescription.description}
+                                 handleFilter={this._handleFilter}
+                                 filterItems={this._filterItems}/>
         </div>
 
         <div className="container large-container">
           <div className="row">
-          {
-            this.state.items.map((item,i) => {
-              return (
-                <div className="col-4">
-                  <div className="card">
-                    <div className="card__inner">
-                      <CardHeader image={"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample74.jpg"} tag={item.tag}/>
-                      <CardBody title={item.title} desc={item.desc} tag={item.tag} />
-                    </div>
-                  </div>
-                </div>
-              );
-            })
-          }
+            <If condition={filter == "work"}>
+              <Then>
+                <Work items={this.state.filtered} />
+              </Then>
+              <Else>
+                <Lab items={this.state.filtered} />
+              </Else>
+            </If>
           </div>
         </div>
-        
 			</section>
 		);
 	}
-}
-
-Portfolio.propTypes = {
-  items: React.PropTypes.array
 }

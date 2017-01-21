@@ -4,7 +4,9 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import App from '../components/App';
 import Home from '../components/Home';
 import PortfolioFilter from '../components/PortfolioFilter';
-
+import Lab from '../components/Lab';
+import Work from '../components/Work';
+import MainPage from '../components/MainPage';
 import PageNotFound from '../components/PageNotFound';
 
 // Checks to see if a redirect is required. There are two types of redirects:
@@ -70,11 +72,11 @@ function redirectToDomain() {
 
 let routes = 
   <Router>
-    <Route path="/" component={App} onEnter={checkForRedirect}>
-      <IndexRoute component={Home} />
-      <Route path="/" component={Home}>
-       
-      </Route>
+    <Route component={App} onEnter={checkForRedirect}>
+      <IndexRoute component={Work} />
+      <Route path="/" component={MainPage} />
+      <Route path="work" component={Work} ignoreScrollBehaviour />
+      <Route path="lab" component={Lab} ignoreScrollBehaviour />
 
       <Route path="*" component={PageNotFound} />
     </Route>

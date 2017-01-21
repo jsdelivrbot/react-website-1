@@ -1,0 +1,9 @@
+.section__title{
+
+  .filter{
+    h3{
+      opacity: 0.85;
+      &.active{opacity:1;}
+    }
+  }
+}

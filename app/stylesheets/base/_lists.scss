@@ -1,6 +1,6 @@
 
 ul {
-  list-style: circle inside;
+  list-style: none;
 }
 
 ol {
@@ -27,4 +27,6 @@ ol {
 
 li {
   margin-bottom: 1rem;
+  margin-right: 15px;
+  display: inline-block;
 }

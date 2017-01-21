@@ -42,9 +42,6 @@ export default class MainPage extends Component {
       snapshot.forEach((childSnapshot) => {
         this.state.items.push(childSnapshot.val());
       })
-      .catch((error) => {
-        console.log("error fetching items",error);
-      });
     });
     
     setTimeout(() => {
@@ -99,7 +96,7 @@ export default class MainPage extends Component {
           </If>
           <PageHeader/>
           <FloatingButton handleMenu={this._handleMenu.bind(this)} />
-          <Portfolio items={this.state.items}/>
+          <Portfolio items={this.state.items} />
         </div>
 
         <Perspective />
