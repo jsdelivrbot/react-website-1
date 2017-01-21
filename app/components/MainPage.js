@@ -4,9 +4,17 @@ import PageHeader from './PageHeader';
 import FloatingButton from './FloatingButton';
 import Perspective from './Perspective';
 import Categories from './Categories';
+import Portfolio from './Portfolio';
 
 import PageLoader from './PageLoader';
 import { If, Then } from 'react-if';
+import firebase from 'firebase';
+import config from '../config/config';
+
+
+const firebaseApp = firebase.initializeApp(config);
+var UCRef = firebaseApp.database().ref("items");
+//firebase.database.enableLogging(true);
 
 export default class MainPage extends Component {
   constructor(props){
@@ -30,6 +38,15 @@ export default class MainPage extends Component {
     let nav = document.getElementsByClassName("close")[0];
     let burger = document.getElementsByClassName("burger")[0];
 
+    UCRef.once('value', snapshot =>{
+      snapshot.forEach((childSnapshot) => {
+        this.state.items.push(childSnapshot.val());
+      })
+      .catch((error) => {
+        console.log("error fetching items",error);
+      });
+    });
+    
     setTimeout(() => {
       this.setState({
           perspective: perspective,
@@ -41,7 +58,12 @@ export default class MainPage extends Component {
         });//setState
     },1000)
 
+    console.log("STEJT ITEMI ", this.state.items);
   }//didMount
+
+  componentWillUpdate(){
+    
+  }
 
   componentWillUnmount(){
     this.setState({
@@ -77,7 +99,7 @@ export default class MainPage extends Component {
           </If>
           <PageHeader/>
           <FloatingButton handleMenu={this._handleMenu.bind(this)} />
-          <Categories />
+          <Portfolio items={this.state.items}/>
         </div>
 
         <Perspective />

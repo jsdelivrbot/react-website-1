@@ -3,6 +3,8 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 import App from '../components/App';
 import Home from '../components/Home';
+import PortfolioFilter from '../components/PortfolioFilter';
+
 import PageNotFound from '../components/PageNotFound';
 
 // Checks to see if a redirect is required. There are two types of redirects:
@@ -71,7 +73,7 @@ let routes =
     <Route path="/" component={App} onEnter={checkForRedirect}>
       <IndexRoute component={Home} />
       <Route path="/" component={Home}>
-
+       
       </Route>
 
       <Route path="*" component={PageNotFound} />
