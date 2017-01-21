@@ -4,20 +4,22 @@ import PageHeader from './PageHeader';
 import FloatingButton from './FloatingButton';
 import Perspective from './Perspective';
 
-export default class MainPage extends Component {
-  constructor(props, context){
-    super(props, context);
+import PageLoader from './PageLoader';
+import { If, Then } from 'react-if';
 
+export default class MainPage extends Component {
+  constructor(props){
+    super(props);
     this.state = {
       perspective: '',
       container: '',
       menuTrigger: '',
       burgerMenu: '',
       nav: '',
-      items: []
+      items: [],
+      show: true
     }//initial state
 
-    this.setState = this.setState.bind(this);
   }//constructor
 
   componentDidMount(){
@@ -27,15 +29,24 @@ export default class MainPage extends Component {
     let nav = document.getElementsByClassName("close")[0];
     let burger = document.getElementsByClassName("burger")[0];
 
-    this.state = {
-      perspective: perspective,
-      container: container,
-      menuTrigger: menuTrigger,
-      nav: nav,
-      burger: burger
-    };//setState
+    setTimeout(() => {
+      this.setState({
+          perspective: perspective,
+          container: container,
+          menuTrigger: menuTrigger,
+          nav: nav,
+          burger: burger,
+          show: false
+        });//setState
+    },1000)
 
   }//didMount
+
+  componentWillUnmount(){
+    this.setState({
+      show: true
+    });
+  }
 
   _handleMenu(e) {
 
@@ -52,11 +63,17 @@ export default class MainPage extends Component {
     }
 
   }//handle navigation open
-
+ 
 	render() {
+    let show = this.state.show;
 		return (
 			<div className="perspective">
         <div className="page-container" id="page-container">
+          <If condition={ show }>
+            <Then>
+              <PageLoader  />
+            </Then>
+          </If>
           <PageHeader/>
           <FloatingButton handleMenu={this._handleMenu.bind(this)} />
         </div>
