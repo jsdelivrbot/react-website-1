@@ -1,0 +1,21 @@
+.hero-enter {
+  opacity: 0.01;
+  width: 0px;
+}
+
+.hero-enter.hero-enter-active {
+  opacity: 1;
+  width: 100px;
+  transition: 700ms;
+}
+
+.hero-leave {
+  opacity: 1;
+  width: 100px;
+}
+
+.hero-leave.hero-leave-active {
+  opacity: 0.01;
+  width: 0px;
+  transition: 700ms;
+}
