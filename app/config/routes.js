@@ -4,7 +4,7 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import App from '../components/App';
 import Home from '../components/Home';
 import PortfolioFilter from '../components/PortfolioFilter';
-import Lab from '../components/Lab';
+import Details from '../components/Details';
 import Work from '../components/Work';
 import MainPage from '../components/MainPage';
 import PageNotFound from '../components/PageNotFound';
@@ -75,9 +75,7 @@ let routes =
     <Route component={App} onEnter={checkForRedirect}>
       <IndexRoute component={Work} />
       <Route path="/" component={MainPage} />
-      <Route path="work" component={Work} ignoreScrollBehaviour />
-      <Route path="lab" component={Lab} ignoreScrollBehaviour />
-
+      <Route path="details/:title" component={Details} />
       <Route path="*" component={PageNotFound} />
     </Route>
   </Router>

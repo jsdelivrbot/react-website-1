@@ -55,7 +55,6 @@ export default class MainPage extends Component {
         });//setState
     },1000)
 
-    console.log("STEJT ITEMI ", this.state.items);
   }//didMount
 
   componentWillUpdate(){

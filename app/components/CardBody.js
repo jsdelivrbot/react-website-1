@@ -1,17 +1,14 @@
 import React, {Component} from 'react';
+import Button from './Button';
 
 export default class CardBody extends Component {
- 
- componentDidMount(){
-   console.log("inside card boyd", this.props.tags);
- }
 
   dynamicClass (tagName){
     return "devicon-" + tagName + "-plain colored";
  }
 	render() {
     let title = this.props.title;
-    let desc = this.props.desc;
+    let desc = this.props.desc.substr(0,65) + '...';
     let tag = this.props.tag;
     let tags = this.props.tags;
 
@@ -31,6 +28,7 @@ export default class CardBody extends Component {
           })
         }
        </ul>
+       <Button title={title} />
       </div>
 		);
 	}

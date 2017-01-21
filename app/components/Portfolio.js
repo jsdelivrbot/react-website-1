@@ -63,7 +63,6 @@ componentDidMount(){
                                  handleFilter={this._handleFilter}
                                  filterItems={this._filterItems}/>
         </div>
-
         <div className="container large-container">
           <div className="row">
             <Loading isLoading={this.state.show}/>
