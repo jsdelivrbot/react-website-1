@@ -68,10 +68,10 @@ componentDidMount(){
             <Loading isLoading={this.state.show}/>
             <If condition={filter == "work"}>
               <Then>
-                <Work items={this.state.filtered} />
+                <Work items={this.state.filtered } />
               </Then>
               <Else>
-                <Lab items={this.state.filtered} />
+                <Lab items={this.state.filtered } />
               </Else>
             </If>
           </div>

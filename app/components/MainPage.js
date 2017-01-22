@@ -5,6 +5,7 @@ import FloatingButton from './FloatingButton';
 import Perspective from './Perspective';
 import Categories from './Categories';
 import Portfolio from './Portfolio';
+import Contact from './Contact';
 
 import PageLoader from './PageLoader';
 import { If, Then } from 'react-if';
@@ -96,6 +97,7 @@ export default class MainPage extends Component {
           <PageHeader/>
           <FloatingButton handleMenu={this._handleMenu.bind(this)} />
           <Portfolio items={this.state.items} />
+          <Contact />
         </div>
 
         <Perspective />

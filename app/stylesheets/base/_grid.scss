@@ -94,6 +94,9 @@
 }
 
 .large-container{
-  @include make-container();
   max-width: 1400px;
+}
+
+.medium-container{
+  max-width: 1180px;
 }

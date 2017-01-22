@@ -74,7 +74,7 @@ let routes =
   <Router>
     <Route component={App} onEnter={checkForRedirect}>
       <IndexRoute component={Work} />
-      <Route path="/" component={MainPage} />
+      <Route path="/" component={MainPage}/>
       <Route path="details/:title" component={Details} />
       <Route path="*" component={PageNotFound} />
     </Route>
