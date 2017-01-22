@@ -8,7 +8,7 @@ export default class Contact extends Component {
 
 		return (
      <section className="contact">
-      <div className="container medium-container">
+      <div className="container large-container">
 
         <div className="row">
 
