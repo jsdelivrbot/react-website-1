@@ -10,8 +10,12 @@
     padding: 1.125rem;
     margin: 0.625rem;
     box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07);
-    max-height:350px;
-    height:350px;
+    max-height:360px;
+    height:360px;
+
+    @include breakpoint(s){
+      padding: 0;
+    }
   }
 
   &:hover{
@@ -40,7 +44,7 @@
   }
 
   &-body{
-    padding: 15px;
+    padding: 15px 15px 0 15px;
     background-color:#fff;
     width:100%;
 
@@ -57,6 +61,7 @@
     }
 
     .button-primary{
+      margin:0;
       border: none;
       box-shadow: none;
       font-family: inherit;
@@ -68,6 +73,10 @@
       i{padding-right: 4px;}
       svg{
         vertical-align:bottom;
+      }
+      
+      a{
+        color: inherit;
       }
     }
 

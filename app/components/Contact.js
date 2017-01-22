@@ -7,7 +7,7 @@ export default class Contact extends Component {
 	render() {
 
 		return (
-     <section className="contact">
+     <section className="section contact">
       <div className="container large-container">
 
         <div className="row">

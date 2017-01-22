@@ -1,8 +1,11 @@
 .contact{
-  padding: 5rem 0;
+  //padding: 5rem 0;
 
   .footer{
-    
+    @include breakpoint(s){
+      margin-bottom: 5rem;
+    }
+
     .footer__quote{
       padding: 1rem 0;
       font-size: 2rem;      
@@ -39,6 +42,5 @@
   .copyright{
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    
   }
 }

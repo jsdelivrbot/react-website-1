@@ -17,9 +17,14 @@
     width: 40%;
     overflow-y: auto;
     padding-top: 15%;
+
+    @include breakpoint(s){
+      padding-top: 20rem;
+    }
   }
   li{
     list-style: none;
+    display:block;
 
     &:first-child{
       border-radius: 3px 0px 0px 3px;
@@ -34,6 +39,34 @@
       text-decoration: none;
       font-size: 2.5rem;
       text-transform: uppercase;
+      background-color: #dbefae;
+      position:relative;
+      text-align:center;
+      box-shadow: 5px 3px 0 rgba($perspective-link, 0.3);
+      width: 50%;
+      margin: 0 auto;
+      transition:box-shadow .3s ease-out;
+
+      &:hover{
+        box-shadow:none;
+      }
+    }
+
+    .heart{
+      fill: red;
+      position: relative;
+      width: 50px;
+      margin:0 3px;
+      animation: pulse 1s ease infinite;
+    }
+
+    &:last-child(){
+      margin-top:25px;
+      a{
+        width: 100%;
+        font-size:1.5rem;
+        box-shadow: none;
+      }
     }
   }
 }
@@ -76,6 +109,10 @@
   &.animate > #page-container{
     transform: translateZ(-500px) translateX(10%) rotateY(-50deg);
     overflow:hidden;
+
+    @include breakpoint(s){
+      transform: translateZ(-500px) translateX(20%) rotateY(-50deg);
+    }
   }
 
   &.showMenu > nav{

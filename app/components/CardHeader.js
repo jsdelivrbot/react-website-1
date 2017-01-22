@@ -6,6 +6,7 @@ export default class CardHeader extends Component {
     let image = this.props.image;
     let tag = this.props.tag;
     let style= {
+      backgroundColor: '#222',
       backgroundImage: 'url(' + image + ')' 
     };
     

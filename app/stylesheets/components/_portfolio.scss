@@ -48,6 +48,10 @@
     box-shadow: none;
     box-sizing: content-box;
     transition: all .3s;
+
+    @include breakpoint(s){
+      margin: 0 0 4em 0;
+    }
   }
 
   & > input:valid + div {
