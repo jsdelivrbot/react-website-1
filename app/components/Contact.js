@@ -28,12 +28,6 @@ export default class Contact extends Component {
 
         </div>
         
-        <div className="row">
-          <div className="col-12 copyright text-center">
-            <p>© Copyright 2017. All Rights Reserved.</p>
-          </div>
-        </div>
-
       </div>
       </section>
 		);

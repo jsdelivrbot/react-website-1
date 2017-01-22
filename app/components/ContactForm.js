@@ -50,7 +50,6 @@ export default class ContactForm extends Component {
 		return (
       <div className="contact__form row">
 				<Alert />
-				<h3 className="footer__header">Contact form.</h3>
 				<form action="http://formspree.io/kakosi69@gmail.com" method="POST" onSubmit={this._handleFormSubmit}>
 					<div className="col-6">
 						<label htmlFor="name" className="label-input">
