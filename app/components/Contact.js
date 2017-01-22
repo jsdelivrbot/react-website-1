@@ -19,6 +19,9 @@ export default class Contact extends Component {
                   <p>If you want to work with me,<br/> have a chat or ask me about anything,<br/> 
                   feel free to contact me.</p>
                 </div>
+                <div className="copyright">
+                  © benjaminbabic.com. All rights reserved
+                </div>
               </div>
           </div>
 

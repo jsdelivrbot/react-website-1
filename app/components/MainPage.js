@@ -99,7 +99,6 @@ export default class MainPage extends Component {
           <FloatingButton handleMenu={this._handleMenu.bind(this)} />
           <Portfolio items={this.state.items} />
           <Contact />
-          <Footer />
         </div>
 
         <Perspective />
